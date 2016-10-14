@@ -1,0 +1,5 @@
+--- 
+port: 8080
+shared_secret: <SECRET>
+mongodb_server: eva-mongo
+mongodb_database: eva
