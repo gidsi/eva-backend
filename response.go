@@ -30,7 +30,9 @@ func ReturnDataNotFound(w http.ResponseWriter) {
 }
 
 func createEntry(i interface{}, w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("access-control-allow-origin", "*")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE")
+	w.Header().Set("Access-Control-Allow-Headers", "content-type")
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	if err := json.NewDecoder(r.Body).Decode(i); err != nil {
 		w.WriteHeader(422) // unprocessable entity
