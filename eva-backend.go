@@ -61,7 +61,7 @@ func SpaceUrlUpdate(w http.ResponseWriter, r *http.Request) {
         }
 }
 
-func loadSpaceData(w http.ResponseWriter, r *http.Request) {
+func loadSpaceData() {
         spaceUrls := readSpaceurl()
 
         timestamp := time.Now().Unix()
@@ -81,7 +81,10 @@ func loadSpaceData(w http.ResponseWriter, r *http.Request) {
                         }
                 }
         }
+}
 
+func refreshData(w http.ResponseWriter, r *http.Request) {
+        loadSpaceData()
         getCalendars()
 
         w.WriteHeader(204)

@@ -50,9 +50,9 @@ var IndexRoutes = Routes{
 		SpaceUrlUpdate,
 	},
 	Route{
-		"RefreshSpaceData",
+		"RefreshData",
 		"GET",
 		"/refresh",
-		loadSpaceData,
+		refreshData,
 	},
 }
