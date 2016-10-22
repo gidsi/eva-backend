@@ -17,10 +17,6 @@ func main() {
         data, _ := ioutil.ReadFile("config.yaml")
         yaml.Unmarshal(data, &config)
 
-        log.Println("here we go!")
-        getCalendars()
-        log.Println("calendar get done!")
-
         router := NewRouter()
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe(":" + strconv.Itoa(config.Port), router))
@@ -85,6 +81,8 @@ func loadSpaceData(w http.ResponseWriter, r *http.Request) {
                         }
                 }
         }
+
+        getCalendars()
 
         w.WriteHeader(204)
 }

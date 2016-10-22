@@ -7,7 +7,6 @@ import (
 
 func getCalendars() {
 	spaceDataArray := readSpacedata()
-	log.Println("calendar write start")
 	for _, spaceData := range spaceDataArray {
 		parser := ics.New()
 		parserChan := parser.GetInputChan()
