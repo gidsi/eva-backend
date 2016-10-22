@@ -38,6 +38,7 @@ func mapEventObject(event *ics.Event) Event {
 	eventData.Location = event.GetLocation()
 	eventData.Summary = event.GetSummary()
 	eventData.Rrule = event.GetRRule()
+	eventData.Url = event.GetUrl()
 	eventData.Class = event.GetClass()
 	eventData.Sequence = event.GetSequence()
 	eventData.WholeDayEvent = event.GetWholeDayEvent()
