@@ -40,4 +40,5 @@ type SpaceData struct {
         IssueReportChannels []string `json:"issue_report_channels"`
         State State `json:"state"`
         Feeds Feeds `json:"feeds"`
+        Ext_ccc string `json:"ext_ccc"`
 }
